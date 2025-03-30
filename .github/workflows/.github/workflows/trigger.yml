@@ -1,0 +1,17 @@
+name: Start Minecraft Server
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  start-server:
+    if: contains(github.event.comment.body, '/start')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Minecraft Server
+        run: echo "Starting the Minecraft server..."
