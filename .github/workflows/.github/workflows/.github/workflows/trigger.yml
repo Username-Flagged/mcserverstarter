@@ -1,0 +1,10 @@
+name: Start Server on Issue Comment  
+on:  
+  issue_comment:  
+    types: [created]  
+jobs:  
+  run-server:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Run the server  
+        run: echo "Starting the server..."
