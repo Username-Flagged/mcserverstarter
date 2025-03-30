@@ -1,0 +1,16 @@
+name: Start Server via Webhook
+
+on:
+  repository_dispatch:
+    types: [start-server]
+
+jobs:
+  start-server:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Minecraft Server
+        run: echo "Starting the server..."
